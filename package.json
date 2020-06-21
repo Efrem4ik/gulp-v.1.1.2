@@ -1,10 +1,10 @@
 {
-  "name": "start-gulp",
-  "version": "1.0.0",
-  "description": "",
+  "name": "start template",
+  "version": "1.0.2",
+  "description": "This is a starting template.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "gulp": "start"
   },
   "author": "Ivan Efremov",
   "license": "ISC",
@@ -21,7 +21,9 @@
     "gulp-uglify": "^3.0.2",
     "jquery-form-styler": "^2.0.2",
     "normalize.css": "^8.0.1",
-    "slick-carousel": "^1.8.1",
     "wow.js": "^1.2.2"
+  },
+  "dependencies": {
+    "swiper": "^5.4.5"
   }
 }

@@ -7,14 +7,19 @@ html {
 *::before {
   box-sizing: inherit;
 }
-html,
-body {
-  position: relative;
-  overflow-x: hidden;
-}
 a {
   display: inline-block;
   text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
 }
 ul,
 li {
@@ -28,6 +33,8 @@ body {
   font-size: ;
   line-height: ;
   color: ;
+  position: relative;
+  overflow-x: hidden;
 }
 .wrapper {
   display: flex;
@@ -43,5 +50,5 @@ body {
 .container {
   max-width: ;
   margin: 0 auto;
-  padding: ;
+  padding: 10px;
 }
