@@ -1,11 +1,12 @@
 let gulp = require('gulp'),
   sass = require('gulp-sass'),
   rename = require('gulp-rename');
-browserSync = require('browser-sync'),
+  browserSync = require('browser-sync'),
   autoprefixer = require('gulp-autoprefixer'),
   concat = require('gulp-concat'),
   uglify = require('gulp-uglify'),
-  cssmin = require('gulp-cssmin');
+  cssmin = require('gulp-cssmin'),
+  pug = require('gulp-pug');
 
 gulp.task('sass', function () {
   return gulp.src('app/scss/**/*.scss')
@@ -22,6 +23,15 @@ gulp.task('sass', function () {
     .pipe(browserSync.reload({
       stream: true
     }))
+});
+
+gulp.task('pug', function(){
+  return gulp.src('app/pug/index.pug',)
+      .pipe(pug({
+           pretty: true
+       }))
+      .pipe(gulp.dest('app/'))
+      .pipe(browserSync.reload({stream: true}))
 });
 
 gulp.task('script', function () {
@@ -81,8 +91,9 @@ gulp.task('browser-sync', function () {
 
 gulp.task('watch', function () {
   gulp.watch('app/scss/**/*.scss', gulp.parallel('sass'))
-  gulp.watch('app/*.html', gulp.parallel('html'))
+  gulp.watch('app/**/*.html', gulp.parallel('html'))
   gulp.watch('app/js/*.js', gulp.parallel('js'))
+  gulp.watch('app/pug/**/*.pug', gulp.parallel('pug'))
 });
 
-gulp.task('default', gulp.parallel('sass', 'watch', 'browser-sync', 'script', 'script-js', 'style'))
+gulp.task('default', gulp.parallel('sass', 'watch', 'browser-sync', 'script', 'script-js', 'style', 'pug'))
