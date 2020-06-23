@@ -96,4 +96,4 @@ gulp.task('watch', function () {
   gulp.watch('app/pug/**/*.pug', gulp.parallel('pug'))
 });
 
-gulp.task('default', gulp.parallel('sass', 'watch', 'browser-sync', 'script', 'script-js', 'style', 'pug'))
+gulp.task('start', gulp.parallel('sass', 'watch', 'browser-sync', 'script', 'script-js', 'style', 'pug'))
